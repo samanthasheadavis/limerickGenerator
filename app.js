@@ -1,3 +1,5 @@
-angular.module('sampleApp', []).controller("controllerName", function($scope){
-  this.message = 'hi';
+angular.module('limerickApp', ['ui-router'])
+
+.config(function($stateProvider, $urlRouterProvider) {
+  
 });
