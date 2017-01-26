@@ -2,10 +2,15 @@
 <html ng-app="limerickApp">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Limerick Generator</title>
   </head>
   <body ng-controller="limerickController as ctrl">
-    <p>{{ctrl.message}}</p>
+    <h1>Limerick Generator</h1>
+    <label for="location">Please input a location</label>
+    <input name="location" type="text" ng-model="ctrl.rhyme"></input>
+    <button ng-click="ctrl.getRhymes(ctrl.rhyme)">Submit</button>
+
+
     <script type="text/javascript" src="src/js/angular.js"></script>
     <script type="text/javascript" src="src/js/angular-ui-router.js"></script>
     <script type="text/javascript" src="app.js"></script>
