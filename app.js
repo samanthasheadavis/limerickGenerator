@@ -1,5 +1,6 @@
 angular.module('limerickApp', []).controller("limerickController", function($scope, $http, RequestService){
   var self = this;
+  self.show=false;
   this.isNoun = function(noun) {
     return noun === "n";
   };
@@ -20,6 +21,8 @@ angular.module('limerickApp', []).controller("limerickController", function($sco
     }
     var rand = Math.floor(Math.random()*nouns.length);
     self.noun = nouns[rand];
-    console.log(self.noun);
+    self.show = true;
   };
+
+
 });

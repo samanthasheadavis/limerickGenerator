@@ -6,10 +6,29 @@
   </head>
   <body ng-controller="limerickController as ctrl">
     <h1>Limerick Generator</h1>
-    <label for="location">Please input a location</label>
-    <input name="location" type="text" ng-model="ctrl.rhyme"></input>
-    <button ng-click="ctrl.getRhymes(ctrl.rhyme)">Submit</button>
 
+    <label for="person">Please choose your actor</label>
+    <select name="person" ng-model="ctrl.person">
+      <option value="man">woman</option>
+      <option value="man">man</option>
+      <option value="man">dog</option>
+      <option value="man">emu</option>
+    </select>
+
+    <label for="location">Please enter a location</label>
+    <input name="location" type="text" ng-model="ctrl.location"></input>
+
+    <label for="verb">Please enter a past-tense verb (ate, caught, saw)</label>
+    <input type="text" name="verb" ng-model="ctrl.presentVerb">
+
+    <label for="adjective">Please enter an adjective (slimy, gray, naeuseating)</label>
+    <input type="text" name="adjective" ng-model="ctrl.adjective">
+
+    <button ng-click="ctrl.getRhymes(ctrl.location)">Submit</button>
+
+    <p ng-show="ctrl.show">There once was a {{ctrl.person}} from {{ctrl.location}}<br>
+      Who {{ctrl.presentVerb}} a {{ctrl.adjective}} {{ctrl.noun}}<br>
+    </p>
 
     <script type="text/javascript" src="src/js/angular.js"></script>
     <script type="text/javascript" src="src/js/angular-ui-router.js"></script>
