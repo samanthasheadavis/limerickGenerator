@@ -1,38 +1,73 @@
 <!DOCTYPE html>
 <html ng-app="limerickApp">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Limerick Generator</title>
-  </head>
-  <body ng-controller="limerickController as ctrl">
-    <h1>Limerick Generator</h1>
+    <link rel="stylesheet" href="src/style/main.css">
+</head>
 
-    <label for="person">Please choose your actor</label>
-    <select name="person" ng-model="ctrl.person">
-      <option value="man">woman</option>
-      <option value="man">man</option>
-      <option value="man">dog</option>
-      <option value="man">emu</option>
-    </select>
+<body ng-controller="limerickController as ctrl">
 
-    <label for="location">Please enter a location</label>
-    <input name="location" type="text" ng-model="ctrl.location"></input>
+    <div id="main-container">
+      <div class="flex-container">
+        <div class="tile title-tile">
+          <h1>Limerick Generator</h1>
+          <button type="button" ng-click="ctrl.animateLeft()">Build a Limerick</button>
+        </div>
 
-    <label for="verb">Please enter a past-tense verb (ate, caught, saw)</label>
-    <input type="text" name="verb" ng-model="ctrl.presentVerb">
+        <div class="tile tile1">
+            <label for="person">Please choose your actor</label>
+            <select name="person" ng-model="ctrl.person">
+          <option value="woman">woman</option>
+          <option value="man">man</option>
+          <option value="dog">dog</option>
+          <option value="emu">emu</option>
+        </select>
+        <button type="button" ng-click="ctrl.animateLeft()">Continue</button>
+        </div>
 
-    <label for="adjective">Please enter an adjective (slimy, gray, naeuseating)</label>
-    <input type="text" name="adjective" ng-model="ctrl.adjective">
+        <div class="tile tile2">
+            <label for="location">Please enter a location</label>
+            <input name="location" type="text" ng-model="ctrl.location"></input>
+            <button type="button" ng-click="ctrl.animateLeft()">Continue</button>
+        </div>
 
-    <button ng-click="ctrl.getRhymes(ctrl.location)">Submit</button>
+        <div class="tile tile3">
+            <label for="verb">Please enter a past-tense verb (ate, caught, saw)</label>
+            <input type="text" name="verb" ng-model="ctrl.verb1">
+            <button type="button" ng-click="ctrl.animateLeft()">Continue</button>
+        </div>
 
-    <p ng-show="ctrl.show">There once was a {{ctrl.person}} from {{ctrl.location}}<br>
-      Who {{ctrl.presentVerb}} a {{ctrl.adjective}} {{ctrl.noun}}<br>
-    </p>
+        <div class="tile tile4">
+            <label for="adjective">Please enter an adjective (slimy, gray, naeuseating)</label>
+            <input type="text" name="adjective" ng-model="ctrl.adjective">
+            <button type="button" ng-click="ctrl.animateLeft()">Continue</button>
+        </div>
+
+        <div class="tile tile5">
+            <label for="verb2">Please enter another past-tense verb</label>
+            <input type="text" name="verb2" ng-model="ctrl.verb2">
+            <button type="button" ng-click="ctrl.animateLeft()">Continue</button>
+        </div>
+
+        <div class="tile tile6">
+            <label for="noun">Please enter a noun</label>
+            <input type="text" name="noun" ng-model="ctrl.noun2">
+            <button type="button" ng-click="ctrl.animateLeft()">Continue</button>
+        </div>
+
+        <button ng-click="ctrl.buildLimerick(ctrl.location, ctrl.person)">Submit</button>
+
+        <p ng-cloak ng-show="ctrl.show">There once was a {{ctrl.person}} from {{ctrl.location}}<br> Who {{ctrl.verb1}} a {{ctrl.adjective}} {{ctrl.noun}}.<br> {{ctrl.article}} {{ctrl.verb2}} a {{ctrl.noun2}}<br> and sat on a rock<br>
+        </p>
+      </div>
+    </div>
 
     <script type="text/javascript" src="src/js/angular.js"></script>
     <script type="text/javascript" src="src/js/angular-ui-router.js"></script>
     <script type="text/javascript" src="app.js"></script>
     <script type="text/javascript" src="src/js/services/RequestService.js"></script>
-  </body>
+</body>
+
 </html>

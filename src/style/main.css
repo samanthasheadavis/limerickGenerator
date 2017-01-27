@@ -1,0 +1,20 @@
+#main-container {
+  position: absolute;
+  left: 0;
+  width: 700vw;
+  background: beige;
+  transition: all .25s ease-in-out; }
+  #main-container .flex-container {
+    display: flex; }
+
+.tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh; }
+
+.title-tile {
+  flex-direction: column; }
+
+/*# sourceMappingURL=main.css.map */
