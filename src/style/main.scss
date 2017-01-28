@@ -17,7 +17,11 @@
   height: 100vh;
 }
 
-.title-tile {
+.focus {
+  display: none;
+}
+
+#tile0 {
   flex-direction: column;
 }
 

@@ -11,12 +11,13 @@
 
     <div id="main-container">
       <div class="flex-container">
-        <div class="tile title-tile">
+        <div class="tile" id="tile0">
           <h1>Limerick Generator</h1>
-          <button type="button" ng-click="ctrl.animateLeft()">Build a Limerick</button>
+          <button type="button" ng-click="ctrl.animateLeft(0)">Build a Limerick</button>
+
         </div>
 
-        <div class="tile tile1">
+        <div class="tile" id="tile1">
             <label for="person">Please choose your actor</label>
             <select name="person" ng-model="ctrl.person">
           <option value="woman">woman</option>
@@ -24,37 +25,45 @@
           <option value="dog">dog</option>
           <option value="emu">emu</option>
         </select>
-        <button type="button" ng-click="ctrl.animateLeft()">Continue</button>
+        <button type="button" ng-click="ctrl.animateLeft(1)">Continue</button>
+        <button type="button" ng-click="ctrl.animateRight(0)">Back</button>
+
         </div>
 
-        <div class="tile tile2">
+        <div class="tile" id="tile2">
             <label for="location">Please enter a location</label>
             <input name="location" type="text" ng-model="ctrl.location"></input>
-            <button type="button" ng-click="ctrl.animateLeft()">Continue</button>
+            <button type="button" ng-click="ctrl.animateLeft(2)">Continue</button>
+            <button type="button" ng-click="ctrl.animateRight(1)">Back</button>
+
         </div>
 
-        <div class="tile tile3">
+        <div class="tile" id="tile3">
             <label for="verb">Please enter a past-tense verb (ate, caught, saw)</label>
             <input type="text" name="verb" ng-model="ctrl.verb1">
-            <button type="button" ng-click="ctrl.animateLeft()">Continue</button>
+            <button type="button" ng-click="ctrl.animateLeft(3)">Continue</button>
+            <button type="button" ng-click="ctrl.animateRight(2)">Back</button>
         </div>
 
-        <div class="tile tile4">
+        <div class="tile" id="tile4">
             <label for="adjective">Please enter an adjective (slimy, gray, naeuseating)</label>
             <input type="text" name="adjective" ng-model="ctrl.adjective">
-            <button type="button" ng-click="ctrl.animateLeft()">Continue</button>
+            <button type="button" ng-click="ctrl.animateLeft(4)">Continue</button>
+            <button type="button" ng-click="ctrl.animateRight(3)">Back</button>
         </div>
 
-        <div class="tile tile5">
+        <div class="tile" id="tile5">
             <label for="verb2">Please enter another past-tense verb</label>
             <input type="text" name="verb2" ng-model="ctrl.verb2">
-            <button type="button" ng-click="ctrl.animateLeft()">Continue</button>
+            <button type="button" ng-click="ctrl.animateLeft(5)">Continue</button>
+            <button type="button" ng-click="ctrl.animateRight(4)">Back</button>
         </div>
 
-        <div class="tile tile6">
+        <div class="tile" id="tile6">
             <label for="noun">Please enter a noun</label>
             <input type="text" name="noun" ng-model="ctrl.noun2">
-            <button type="button" ng-click="ctrl.animateLeft()">Continue</button>
+            <button type="button" ng-click="ctrl.animateLeft(6)">Continue</button>
+            <button type="button" ng-click="ctrl.animateRight(5)">Back</button>
         </div>
 
         <button ng-click="ctrl.buildLimerick(ctrl.location, ctrl.person)">Submit</button>
