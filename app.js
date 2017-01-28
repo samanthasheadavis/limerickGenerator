@@ -4,14 +4,14 @@ angular.module('limerickApp', []).controller("limerickController", function($sco
     self.show = false;
 
     self.animateLeft = function(num) {
-      self.id = 'tile' + num;
-      self.container = document.getElementById(self.id);
-      self.container.className = 'focus';
+      self.percent = -12.5*(parseInt(num)) + '%';
+      self.container = document.getElementById("main-container");
+      self.container.setAttribute("style", "transform: translateX(" +self.percent+ ")");
     };
 
     self.animateRight = function(num) {
-      self.container.id = self.id;
-      self.container.className = "tile";
+      self.container = document.getElementById("main-container");
+      self.container.setAttribute("style", "transform: translateX(0%)");
     };
 
     this.buildLimerick = function(word, person) {

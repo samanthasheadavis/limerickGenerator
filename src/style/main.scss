@@ -1,7 +1,7 @@
 #main-container {
   position: absolute;
   left: 0px;
-  width: 700vw;
+  width: 800vw;
   transition: all .25s ease-in-out;
 
   .flex-container {
@@ -18,7 +18,12 @@
 }
 
 .focus {
-  display: none;
+  display: flex;
+  transform: translateX(-14.28%);
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
 }
 
 #tile0 {

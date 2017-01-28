@@ -13,7 +13,7 @@
       <div class="flex-container">
         <div class="tile" id="tile0">
           <h1>Limerick Generator</h1>
-          <button type="button" ng-click="ctrl.animateLeft(0)">Build a Limerick</button>
+          <button type="button" ng-click="ctrl.animateLeft(1)">Build a Limerick</button>
 
         </div>
 
@@ -25,51 +25,53 @@
           <option value="dog">dog</option>
           <option value="emu">emu</option>
         </select>
-        <button type="button" ng-click="ctrl.animateLeft(1)">Continue</button>
-        <button type="button" ng-click="ctrl.animateRight(0)">Back</button>
+        <button type="button" ng-click="ctrl.animateLeft(2)">Continue</button>
+        <button type="button" ng-click="ctrl.animateRight(2)">Back</button>
 
         </div>
 
         <div class="tile" id="tile2">
             <label for="location">Please enter a location</label>
             <input name="location" type="text" ng-model="ctrl.location"></input>
-            <button type="button" ng-click="ctrl.animateLeft(2)">Continue</button>
-            <button type="button" ng-click="ctrl.animateRight(1)">Back</button>
+            <button type="button" ng-click="ctrl.animateLeft(3)">Continue</button>
+            <button type="button" ng-click="ctrl.animateRight(3)">Back</button>
 
         </div>
 
         <div class="tile" id="tile3">
             <label for="verb">Please enter a past-tense verb (ate, caught, saw)</label>
             <input type="text" name="verb" ng-model="ctrl.verb1">
-            <button type="button" ng-click="ctrl.animateLeft(3)">Continue</button>
-            <button type="button" ng-click="ctrl.animateRight(2)">Back</button>
+            <button type="button" ng-click="ctrl.animateLeft(4)">Continue</button>
+            <button type="button" ng-click="ctrl.animateRight(4)">Back</button>
         </div>
 
         <div class="tile" id="tile4">
             <label for="adjective">Please enter an adjective (slimy, gray, naeuseating)</label>
             <input type="text" name="adjective" ng-model="ctrl.adjective">
-            <button type="button" ng-click="ctrl.animateLeft(4)">Continue</button>
-            <button type="button" ng-click="ctrl.animateRight(3)">Back</button>
+            <button type="button" ng-click="ctrl.animateLeft(5)">Continue</button>
+            <button type="button" ng-click="ctrl.animateRight(5)">Back</button>
         </div>
 
         <div class="tile" id="tile5">
             <label for="verb2">Please enter another past-tense verb</label>
             <input type="text" name="verb2" ng-model="ctrl.verb2">
-            <button type="button" ng-click="ctrl.animateLeft(5)">Continue</button>
-            <button type="button" ng-click="ctrl.animateRight(4)">Back</button>
+            <button type="button" ng-click="ctrl.animateLeft(6)">Continue</button>
+            <button type="button" ng-click="ctrl.animateRight(6)">Back</button>
         </div>
 
         <div class="tile" id="tile6">
             <label for="noun">Please enter a noun</label>
             <input type="text" name="noun" ng-model="ctrl.noun2">
-            <button type="button" ng-click="ctrl.animateLeft(6)">Continue</button>
-            <button type="button" ng-click="ctrl.animateRight(5)">Back</button>
+            <button type="button" ng-click="ctrl.animateLeft(7)">Continue</button>
+            <button type="button" ng-click="ctrl.animateRight(7)">Back</button>
         </div>
 
-        <button ng-click="ctrl.buildLimerick(ctrl.location, ctrl.person)">Submit</button>
-
-        <p ng-cloak ng-show="ctrl.show">There once was a {{ctrl.person}} from {{ctrl.location}}<br> Who {{ctrl.verb1}} a {{ctrl.adjective}} {{ctrl.noun}}.<br> {{ctrl.article}} {{ctrl.verb2}} a {{ctrl.noun2}}<br> and sat on a rock<br>
-        </p>
+        <div class="tile" id="tile7">
+            <button ng-click="ctrl.buildLimerick(ctrl.location, ctrl.person)">Submit</button>
+            <p ng-cloak ng-show="ctrl.show">There once was a {{ctrl.person}} from {{ctrl.location}}<br> Who {{ctrl.verb1}} a {{ctrl.adjective}} {{ctrl.noun}}.<br> {{ctrl.article}} {{ctrl.verb2}} a {{ctrl.noun2}}<br> and sat on a rock<br>
+            </p>
+            <button type="button" ng-click="ctrl.animateRight(8)">Back</button>
+        </div>
       </div>
     </div>
 
