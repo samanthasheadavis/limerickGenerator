@@ -1,8 +1,7 @@
 #main-container {
   position: absolute;
-  left: 0;
+  left: 0px;
   width: 700vw;
-  background: beige;
   transition: all .25s ease-in-out;
 
   .flex-container {
@@ -20,4 +19,32 @@
 
 .title-tile {
   flex-direction: column;
+}
+
+.tile1 {
+  background: red;
+}
+
+.tile2 {
+  background: orange;
+}
+
+.tile3 {
+  background: yellow;
+}
+
+.tile4 {
+  background: green;
+}
+
+.tile5 {
+  background: cyan;
+}
+
+.tile6 {
+  background: navy;
+}
+
+.tile7 {
+  background: indigo;
 }

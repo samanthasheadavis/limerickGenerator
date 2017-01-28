@@ -6,8 +6,10 @@ angular.module('limerickApp', []).controller("limerickController", function($sco
     self.animateLeft = function() {
       var container = document.getElementById("main-container");
       var left = parseInt(window.getComputedStyle(container).getPropertyValue("left"));
-      console.log(left);
-      container.style.left = left-100 + "vw";
+      var width = parseInt(window.getComputedStyle(container).getPropertyValue("width"));
+      console.log(width);
+      // left = left - width;
+      // container.style.left = left + 'px';
     };
 
     this.buildLimerick = function(word, person) {
