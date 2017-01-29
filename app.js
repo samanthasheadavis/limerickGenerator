@@ -3,10 +3,12 @@ angular.module('limerickApp', []).controller("limerickController", function($sco
     var self = this;
     self.show = false;
 
-    self.animateLeft = function(num) {
-      self.percent = -12.5*(parseInt(num)) + '%';
-      self.container = document.getElementById("main-container");
-      self.container.setAttribute("style", "transform: translateX(" +self.percent+ ")");
+    self.slide = function(currentSlide, nextSlide) {
+      var slide1 = document.getElementById("tile" + currentSlide);
+      var slide2 = document.getElementById("tile" + nextSlide);
+      slide1.className="hide";
+      slide2.className="show";
+      // self.container.setAttribute("style", "transform: translateX(" +self.percent+ ")");
     };
 
     self.animateRight = function(num) {
@@ -45,7 +47,7 @@ angular.module('limerickApp', []).controller("limerickController", function($sco
     };
 
     self.getNounRhyme = function() {
-      
+
     };
 
 });
