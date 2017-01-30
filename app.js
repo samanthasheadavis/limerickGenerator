@@ -8,7 +8,6 @@ angular.module('limerickApp', []).controller("limerickController", function($sco
       var slide2 = document.getElementById("tile" + nextSlide);
       slide1.className="hide";
       slide2.className="show";
-      // slide2.setAttribute("style", "opacity: 1");
     };
 
     this.buildLimerick = function(word, person) {
