@@ -26,14 +26,14 @@
           <option value="dog">dog</option>
           <option value="emu">emu</option>
         </select>
-        <button type="button" ng-click="ctrl.slide(1, 2)">Continue</button>
+        <button type="button" ng-click="ctrl.slide(1, 2); ctrl.getArticle(ctrl.person)">Continue</button>
         <button type="button" ng-click="ctrl.slide(1, 0)">Back</button>
 
         </div>
 
         <div class="tile" id="tile2">
             <label for="location">Please enter a location</label>
-            <input name="location" type="text" ng-model="ctrl.location"></input>
+            <input name="location" type="text" ng-model="ctrl.noun1"></input>
             <button type="button" ng-click="ctrl.slide(2, 3)">Continue</button>
             <button type="button" ng-click="ctrl.slide(2, 1)">Back</button>
 
@@ -63,13 +63,13 @@
         <div class="tile" id="tile6">
             <label for="noun">Please enter a noun</label>
             <input type="text" name="noun" ng-model="ctrl.noun2">
-            <button type="button" ng-click="ctrl.slide(6, 7)">Continue</button>
+            <button type="button" ng-click="ctrl.slide(6, 7); ctrl.getNounRhyme(ctrl.noun2)">Continue</button>
             <button type="button" ng-click="ctrl.slide(6, 5)">Back</button>
         </div>
 
         <div class="tile" id="tile7">
-            <button ng-click="ctrl.buildLimerick(ctrl.location, ctrl.person)">Submit</button>
-            <p ng-cloak ng-show="ctrl.show">There once was a {{ctrl.person}} from {{ctrl.location}}<br> Who {{ctrl.verb1}} a {{ctrl.adjective}} {{ctrl.noun}}.<br> {{ctrl.article}} {{ctrl.verb2}} a {{ctrl.noun2}}<br> and sat on a rock<br>
+            <button ng-click="ctrl.buildLimerick(ctrl.noun1, ctrl.noun2)">Submit</button>
+            <p ng-cloak ng-show="ctrl.show">There once was a {{ctrl.person}} from {{ctrl.noun1}}<br> Who {{ctrl.verb1}} a {{ctrl.adjective}} {{ctrl.rhyme1}}.<br> {{ctrl.article}} {{ctrl.verb2}} a {{ctrl.noun2}}<br> and sat on a {{ctrl.rhyme2}}<br>and thus ends this tale about {{ctrl.rhyme3}}s
             </p>
             <button type="button" ng-click="ctrl.slide(7, 6)">Back</button>
             <button type="button" ng-click="ctrl.slide(7, 0)">Start Over</button>
