@@ -8,12 +8,7 @@ angular.module('limerickApp', []).controller("limerickController", function($sco
       var slide2 = document.getElementById("tile" + nextSlide);
       slide1.className="hide";
       slide2.className="show";
-      // self.container.setAttribute("style", "transform: translateX(" +self.percent+ ")");
-    };
-
-    self.animateRight = function(num) {
-      self.container = document.getElementById("main-container");
-      self.container.setAttribute("style", "transform: translateX(0%)");
+      // slide2.setAttribute("style", "opacity: 1");
     };
 
     this.buildLimerick = function(word, person) {
