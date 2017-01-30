@@ -68,7 +68,7 @@
         </div>
 
         <div class="tile" id="tile7">
-            <button ng-click="ctrl.buildLimerick(ctrl.noun1, ctrl.noun2)">Submit</button>
+            <button ng-click="ctrl.findRhyme1(ctrl.noun1); ctrl.findRhyme2(ctrl.noun2)">Submit</button>
             <p ng-cloak ng-show="ctrl.show">There once was a {{ctrl.person}} from {{ctrl.noun1}}<br> Who {{ctrl.verb1}} a {{ctrl.adjective}} {{ctrl.rhyme1}}.<br> {{ctrl.article}} {{ctrl.verb2}} a {{ctrl.noun2}}<br> and sat on a {{ctrl.rhyme2}}<br>and thus ends this tale about {{ctrl.rhyme3}}s
             </p>
             <button type="button" ng-click="ctrl.slide(7, 6)">Back</button>

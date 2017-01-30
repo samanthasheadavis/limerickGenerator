@@ -4,33 +4,38 @@ angular.module('limerickApp', []).controller("limerickController", function($sco
     self.show = false;
 
     self.slide = function(currentSlide, nextSlide) {
-        var slide1 = document.getElementById("tile" + currentSlide);
-        var slide2 = document.getElementById("tile" + nextSlide);
-        slide1.className = "hide";
-        slide2.className = "show";
+      var slide1 = document.getElementById("tile" + currentSlide);
+      var slide2 = document.getElementById("tile" + nextSlide);
+      slide1.className="hide";
+      slide2.className="show";
     };
 
-    this.buildLimerick = function(rhyme1, rhyme2) {
+    self.findRhyme1 = function(rhyme1) {
         RequestService.getRhymes(rhyme1, function(response) {
-            if (response.data.length === 0) {
-            } else {
-                $scope.rhymes1 = response.data;
-                self.getNoun1($scope.rhymes1);
-            }
+          $scope.rhymes1 = response.data;
+          if (response.data.length < 3) {
+            alert('nothing rhymes well with your location, move somewhere else.');
+          } else {
+            self.getNoun1($scope.rhymes1);
+          }
         });
+      };
+
+      self.findRhyme2 = function(rhyme2) {
         RequestService.getRhymes(rhyme2, function(response) {
-            if (response.data.length === 0) {
-            } else {
-                $scope.rhymes2 = response.data;
-                self.getNoun2($scope.rhymes2);
-            }
+          $scope.rhymes2 = response.data;
+          if (response.data.length === 0) {
+            alert("I don't like that noun, make it better");
+          } else {
+            self.getNoun2($scope.rhymes2);
+          }
         });
         self.show = true;
     };
 
     self.getNoun1 = function(wordsArray) {
         self.nouns = [];
-        for (count = 0; count < wordsArray.length - 1; count++) {
+        for (count = 0; count < wordsArray.length - 2; count++) {
             if (wordsArray[count].tags[0] === 'n') {
                 self.nouns.push(wordsArray[count].word);
             }
@@ -43,7 +48,7 @@ angular.module('limerickApp', []).controller("limerickController", function($sco
 
     self.getNoun2 = function(wordsArray) {
         self.nouns2 = [];
-        for (count = 0; count < wordsArray.length - 1; count++) {
+        for (count = 0; count < wordsArray.length - 2; count++) {
             if (wordsArray[count].tags[0] === 'n') {
                 self.nouns2.push(wordsArray[count].word);
             }
@@ -54,11 +59,11 @@ angular.module('limerickApp', []).controller("limerickController", function($sco
 
     self.getArticle = function(person) {
         if (person === 'man') {
-            self.article = 'He';
+          self.article = 'He';
         } else if (person === 'woman') {
-            self.article = 'She';
+          self.article = 'She';
         } else {
-            self.article = 'It';
+          self.article = 'It';
         }
     };
 });
