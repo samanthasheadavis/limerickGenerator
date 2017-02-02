@@ -1,4 +1,10 @@
 $font: 'Rubik', sans-serif;
+$periwinkle: #83a4d4;
+$sky: #b6fbff;
+
+body {
+  margin: 0;
+}
 
 #main-container {
   position: absolute;
@@ -6,6 +12,7 @@ $font: 'Rubik', sans-serif;
   width: 100vw;
   transition: all .25s ease-in-out;
   font-family: $font;
+  background: linear-gradient(to right, $periwinkle, $sky);
 
   .flex-container {
     display: flex;
@@ -35,22 +42,44 @@ $font: 'Rubik', sans-serif;
   margin-top: 50px;
   width: 50%;
   justify-content: center;
-
-  button {
-    margin-left: 15px;
-  }
 }
 
 .question-container {
   display: flex;
-  width: 50%;
   justify-content: center;
+
+  label {
+    font-size: 1.5em;
+  }
 
   input {
     margin-left: 15px;
+    font-size: 1.5em;
   }
 
   select {
     margin-left: 15px;
+    font-size: 1.5em;
+  }
+}
+
+button {
+  margin-left: 15px;
+  background: none;
+  border: 3px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  display: block;
+  font-size: 1.6em;
+  font-weight: bold;
+  margin: 1em auto;
+  padding: 1em;
+  position: relative;
+  text-transform: uppercase;
+
+
+  &:hover {
+    color: $periwinkle;
+    cursor: pointer;
   }
 }
