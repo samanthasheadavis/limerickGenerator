@@ -1,4 +1,4 @@
-angular.module('limerickApp', []).controller("limerickController", function($scope, $http, RequestService) {
+angular.module('limerickApp', []).controller("limerickController", function($http, RequestService) {
 
     var self = this;
     self.show = false;
@@ -11,32 +11,33 @@ angular.module('limerickApp', []).controller("limerickController", function($sco
     };
 
     self.findRhyme1 = function(rhyme1) {
+      self.rhymes1 = '';
         RequestService.getRhymes(rhyme1, function(response) {
-          $scope.rhymes1 = response.data;
+          self.rhymes1 = response.data;
           if (response.data.length < 3) {
             alert('nothing rhymes well with your location, move somewhere else.');
           } else {
-            self.getNoun1($scope.rhymes1);
+            self.getNoun1(self.rhymes1);
           }
         });
       };
 
       self.findRhyme2 = function(rhyme2) {
         RequestService.getRhymes(rhyme2, function(response) {
-          $scope.rhymes2 = response.data;
+          self.rhymes2 = response.data;
           if (response.data.length === 0) {
             alert("I don't like that noun, make it better");
           } else {
-            self.getNoun2($scope.rhymes2);
+            self.getNoun2(self.rhymes2);
           }
         });
         self.show = true;
     };
 
     self.getNoun1 = function(wordsArray) {
-        self.nouns = [];
+      self.nouns = [];
         for (count = 0; count < wordsArray.length - 2; count++) {
-            if (wordsArray[count].tags[0] === 'n') {
+            if (wordsArray[count].hasOwnProperty('tags') && wordsArray[count].tags[0] === 'n') {
                 self.nouns.push(wordsArray[count].word);
             }
         }
@@ -49,7 +50,7 @@ angular.module('limerickApp', []).controller("limerickController", function($sco
     self.getNoun2 = function(wordsArray) {
         self.nouns2 = [];
         for (count = 0; count < wordsArray.length - 2; count++) {
-            if (wordsArray[count].tags[0] === 'n') {
+            if (wordsArray[count].hasOwnProperty('tags') && wordsArray[count].tags[0] === 'n') {
                 self.nouns2.push(wordsArray[count].word);
             }
         }
