@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Limerick Generator</title>
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,700" rel="stylesheet">
     <link rel="stylesheet" href="src/style/main.css">
 </head>
 
@@ -15,64 +16,103 @@
         <div class="tile show" id="tile0">
           <h1>Limerick Generator</h1>
           <button type="button" ng-click="ctrl.slide(0, 1)">Build a Limerick</button>
-
         </div>
 
         <div class="tile" id="tile1">
+          <div class="question-container">
             <label for="person">Please choose your actor</label>
             <select name="person" ng-model="ctrl.person">
-          <option value="woman">woman</option>
-          <option value="man">man</option>
-          <option value="dog">dog</option>
-          <option value="emu">emu</option>
-        </select>
-        <button type="button" ng-click="ctrl.slide(1, 2); ctrl.getArticle(ctrl.person)">Continue</button>
-        <button type="button" ng-click="ctrl.slide(1, 0)">Back</button>
+              <option value="woman">woman</option>
+              <option value="man">man</option>
+              <option value="dog">dog</option>
+              <option value="emu">emu</option>
+            </select>
+          </div>
+
+          <div class="btn-container">
+            <button type="button" ng-click="ctrl.slide(1, 2); ctrl.getArticle(ctrl.person)">Continue</button>
+            <button type="button" ng-click="ctrl.slide(1, 0)">Back</button>
+          </div>
 
         </div>
 
         <div class="tile" id="tile2">
+          <div class="question-container">
             <label for="location">Please enter a location</label>
             <input name="location" type="text" ng-model="ctrl.noun1"></input>
+          </div>
+
+          <div class="btn-container">
             <button type="button" ng-click="ctrl.slide(2, 3)">Continue</button>
             <button type="button" ng-click="ctrl.slide(2, 1)">Back</button>
+          </div>
 
         </div>
 
         <div class="tile" id="tile3">
+          <div class="question-container">
             <label for="verb">Please enter a past-tense verb (ate, caught, saw)</label>
             <input type="text" name="verb" ng-model="ctrl.verb1">
+          </div>
+          <div class="btn-container">
             <button type="button" ng-click="ctrl.slide(3, 4)">Continue</button>
             <button type="button" ng-click="ctrl.slide(3, 2)">Back</button>
+          </div>
+
         </div>
 
         <div class="tile" id="tile4">
+          <div class="question-container">
             <label for="adjective">Please enter an adjective (slimy, gray, naeuseating)</label>
             <input type="text" name="adjective" ng-model="ctrl.adjective">
+          </div>
+
+          <div class="btn-container">
             <button type="button" ng-click="ctrl.slide(4, 5)">Continue</button>
             <button type="button" ng-click="ctrl.slide(4, 3)">Back</button>
+          </div>
+
         </div>
 
         <div class="tile" id="tile5">
+          <div class="question-container">
             <label for="verb2">Please enter another past-tense verb</label>
             <input type="text" name="verb2" ng-model="ctrl.verb2">
+          </div>
+
+          <div class="btn-container">
             <button type="button" ng-click="ctrl.slide(5,6)">Continue</button>
             <button type="button" ng-click="ctrl.slide(5, 4)">Back</button>
+          </div>
+
         </div>
 
         <div class="tile" id="tile6">
+          <div class="question-container">
             <label for="noun">Please enter a noun</label>
             <input type="text" name="noun" ng-model="ctrl.noun2">
+          </div>
+
+          <div class="btn-container">
             <button type="button" ng-click="ctrl.slide(6, 7); ctrl.getNounRhyme(ctrl.noun2)">Continue</button>
             <button type="button" ng-click="ctrl.slide(6, 5)">Back</button>
+
+          </div>
+
         </div>
 
         <div class="tile" id="tile7">
-            <button ng-click="ctrl.findRhyme1(ctrl.noun1); ctrl.findRhyme2(ctrl.noun2)">Submit</button>
+          <div class="limerick-container">
             <p ng-cloak ng-show="ctrl.show">There once was a {{ctrl.person}} from {{ctrl.noun1}}<br> Who {{ctrl.verb1}} a {{ctrl.adjective}} {{ctrl.rhyme1}}.<br> {{ctrl.article}} {{ctrl.verb2}} a {{ctrl.noun2}}<br> and sat on a {{ctrl.rhyme2}}<br>and thus ends this tale about {{ctrl.rhyme3}}s
             </p>
+          </div>
+          <div class="btn-container">
+            <button ng-click="ctrl.findRhyme1(ctrl.noun1); ctrl.findRhyme2(ctrl.noun2)">Submit</button>
+          </div>
+          <div class="btn-container">
             <button type="button" ng-click="ctrl.slide(7, 6)">Back</button>
             <button type="button" ng-click="ctrl.slide(7, 0)">Start Over</button>
+          </div>
         </div>
       </div>
     </div>

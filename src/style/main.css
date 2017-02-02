@@ -2,12 +2,14 @@
   position: absolute;
   left: 0px;
   width: 100vw;
-  transition: all .25s ease-in-out; }
+  transition: all .25s ease-in-out;
+  font-family: "Rubik", sans-serif; }
   #main-container .flex-container {
     display: flex; }
 
 .tile {
-  display: none; }
+  display: none;
+  flex-direction: column; }
 
 .hide {
   display: none; }
@@ -20,7 +22,21 @@
   height: 100vh;
   transition: all .5s ease-in-out; }
 
-#tile0 {
-  flex-direction: column; }
+.btn-container {
+  display: flex;
+  margin-top: 50px;
+  width: 50%;
+  justify-content: center; }
+  .btn-container button {
+    margin-left: 15px; }
+
+.question-container {
+  display: flex;
+  width: 50%;
+  justify-content: center; }
+  .question-container input {
+    margin-left: 15px; }
+  .question-container select {
+    margin-left: 15px; }
 
 /*# sourceMappingURL=main.css.map */

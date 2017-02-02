@@ -6,8 +6,8 @@ angular.module('limerickApp', []).controller("limerickController", function($htt
     self.slide = function(currentSlide, nextSlide) {
       var slide1 = document.getElementById("tile" + currentSlide);
       var slide2 = document.getElementById("tile" + nextSlide);
-      slide1.className="hide";
-      slide2.className="show";
+      slide1.className ="hide tile";
+      slide2.className ="show tile";
     };
 
     self.findRhyme1 = function(rhyme1) {
