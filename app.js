@@ -10,6 +10,19 @@ angular.module('limerickApp', []).controller("limerickController", function($htt
       slide2.className ="show tile";
     };
 
+    self.startOver = function(currentSlide, nextSlide) {
+      var slide1 = document.getElementById("tile" + currentSlide);
+      var slide2 = document.getElementById("tile" + nextSlide);
+      slide1.className ="hide tile";
+      slide2.className ="show tile";
+      self.person = '';
+      self.noun1 = '';
+      self.verb1 = '';
+      self.adjective = '';
+      self.verb2 = '';
+      self.noun2 = '';
+    };
+
     self.findRhyme1 = function(rhyme1) {
       self.rhymes1 = '';
         RequestService.getRhymes(rhyme1, function(response) {
