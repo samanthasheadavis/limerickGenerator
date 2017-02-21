@@ -30,8 +30,8 @@
           </div>
 
           <div class="btn-container">
-            <button type="button" ng-click="ctrl.slide(1, 2); ctrl.getArticle(ctrl.person)">Continue</button>
             <button type="button" ng-click="ctrl.slide(1, 0)">Back</button>
+            <button type="button" ng-click="ctrl.slide(1, 2); ctrl.getArticle(ctrl.person)">Continue</button>
           </div>
 
         </div>
@@ -43,8 +43,8 @@
           </div>
 
           <div class="btn-container">
-            <button type="button" ng-click="ctrl.slide(2, 3)">Continue</button>
             <button type="button" ng-click="ctrl.slide(2, 1)">Back</button>
+            <button type="button" ng-click="ctrl.slide(2, 3)">Continue</button>
           </div>
 
         </div>
@@ -55,8 +55,8 @@
             <input type="text" name="verb" ng-model="ctrl.verb1">
           </div>
           <div class="btn-container">
-            <button type="button" ng-click="ctrl.slide(3, 4)">Continue</button>
             <button type="button" ng-click="ctrl.slide(3, 2)">Back</button>
+            <button type="button" ng-click="ctrl.slide(3, 4)">Continue</button>
           </div>
 
         </div>
@@ -68,8 +68,8 @@
           </div>
 
           <div class="btn-container">
-            <button type="button" ng-click="ctrl.slide(4, 5)">Continue</button>
             <button type="button" ng-click="ctrl.slide(4, 3)">Back</button>
+            <button type="button" ng-click="ctrl.slide(4, 5)">Continue</button>
           </div>
 
         </div>
@@ -81,8 +81,8 @@
           </div>
 
           <div class="btn-container">
-            <button type="button" ng-click="ctrl.slide(5,6)">Continue</button>
             <button type="button" ng-click="ctrl.slide(5, 4)">Back</button>
+            <button type="button" ng-click="ctrl.slide(5,6)">Continue</button>
           </div>
 
         </div>
@@ -94,16 +94,15 @@
           </div>
 
           <div class="btn-container">
-            <button type="button" ng-click="ctrl.slide(6, 7); ctrl.getNounRhyme(ctrl.noun2)">Continue</button>
             <button type="button" ng-click="ctrl.slide(6, 5)">Back</button>
-
+            <button type="button" ng-click="ctrl.slide(6, 7); ctrl.getNounRhyme(ctrl.noun2)">Continue</button>
           </div>
 
         </div>
 
         <div class="tile" id="tile7">
           <div class="limerick-container">
-            <p ng-cloak ng-show="ctrl.show">There once was a {{ctrl.person}} from {{ctrl.noun1}}<br> Who {{ctrl.verb1}} a {{ctrl.adjective}} {{ctrl.rhyme1}}.<br> {{ctrl.article}} {{ctrl.verb2}} a {{ctrl.noun2}}<br> and sat on a {{ctrl.rhyme2}}<br>and thus ends this tale about {{ctrl.rhyme3}}s
+            <p class="limerick" ng-cloak ng-show="ctrl.show">There once was a {{ctrl.person}} from {{ctrl.noun1}}<br> Who {{ctrl.verb1}} a {{ctrl.adjective}} {{ctrl.rhyme1}}.<br> {{ctrl.article}} {{ctrl.verb2}} a {{ctrl.noun2}}<br> and sat on a {{ctrl.rhyme2}}<br>and thus ends this tale about {{ctrl.rhyme3}}s
             </p>
           </div>
           <div class="btn-container">
