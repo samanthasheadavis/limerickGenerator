@@ -62,8 +62,7 @@ button {
   padding: 15px;
   position: relative;
   text-transform: uppercase;
-  outline: none;
-  box-shadow: 0 0 5px rgba(25, 25, 25, 0.25); }
+  outline: none; }
   button:hover {
     color: #83a4d4;
     cursor: pointer;
