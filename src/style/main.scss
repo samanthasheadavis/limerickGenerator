@@ -1,6 +1,7 @@
 $font: 'Rubik', sans-serif;
 $periwinkle: #83a4d4;
 $sky: #b6fbff;
+$shadow: 0 0 5px rgba(25,25,25,.25);
 
 body {
   margin: 0;
@@ -82,7 +83,7 @@ button {
   position: relative;
   text-transform: uppercase;
   outline: none;
-
+  box-shadow: $shadow;
 
   &:hover {
     color: $periwinkle;
@@ -99,5 +100,6 @@ button {
     padding: 20px;
     border-radius: 2em;
     background: #fff;
+    box-shadow: $shadow;
   }
 }

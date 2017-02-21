@@ -62,7 +62,8 @@ button {
   padding: 15px;
   position: relative;
   text-transform: uppercase;
-  outline: none; }
+  outline: none;
+  box-shadow: 0 0 5px rgba(25, 25, 25, 0.25); }
   button:hover {
     color: #83a4d4;
     cursor: pointer;
@@ -73,6 +74,7 @@ button {
   font-size: 20px;
   padding: 20px;
   border-radius: 2em;
-  background: #fff; }
+  background: #fff;
+  box-shadow: 0 0 5px rgba(25, 25, 25, 0.25); }
 
 /*# sourceMappingURL=main.css.map */
